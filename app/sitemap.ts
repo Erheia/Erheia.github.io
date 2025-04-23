@@ -6,6 +6,8 @@ const BaseUrl = metaData.baseUrl.endsWith("/")
   ? metaData.baseUrl
   : `${metaData.baseUrl}/`;
 
+export const dynamic = "force-static";
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let blogs = getBlogPosts().map((post) => ({
     url: `${BaseUrl}blog/${post.slug}`,
